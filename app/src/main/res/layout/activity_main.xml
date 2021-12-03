@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/viewPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#232533"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#14151E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <SearchView
+            android:id="@+id/searchView2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="32dp"
+            android:background="#F8F8F8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginTop="4dp"
+        android:background="#232533"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPrincipal">
+
+        <TextView
+            android:id="@+id/homeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Home"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/homeButton"
+            app:layout_constraintStart_toStartOf="@+id/homeButton"
+            app:layout_constraintTop_toBottomOf="@+id/homeButton" />
+
+        <TextView
+            android:id="@+id/seasonalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Seasonal"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/seasonalButton"
+            app:layout_constraintStart_toStartOf="@+id/seasonalButton"
+            app:layout_constraintTop_toBottomOf="@+id/seasonalButton" />
+
+        <TextView
+            android:id="@+id/myListText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="My List"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/myListButton"
+            app:layout_constraintStart_toStartOf="@+id/myListButton"
+            app:layout_constraintTop_toBottomOf="@+id/myListButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/myListButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="30dp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/seasonalButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/seasonalButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/homeButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="60dp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/seasonalButton"
+            app:layout_constraintEnd_toStartOf="@+id/seasonalButton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/seasonalButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/myListButton"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
