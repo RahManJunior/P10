@@ -2,6 +2,8 @@ package com.example.p10
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getCurrentData()
     }
     private fun getCurrentData() {
         val api = Retrofit.Builder()
@@ -24,8 +27,11 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.IO){
             val response = api.getAnime().awaitResponse()
             if (response.isSuccessful) {
-                val data = response.body()!!
+                val datareceived = response.body()!!
+                val animeTitleText: TextView = findViewById(R.id.animeTitleText)
+                animeTitleText.text = response.body[0].attributes.canonicalTitle
             }
         }
     }
+
 }

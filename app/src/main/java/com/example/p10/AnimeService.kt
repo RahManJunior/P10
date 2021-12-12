@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface AnimeService {
-    @GET("/anime")
+    @GET("trending/anime")
     fun getAnime(): Call<KitsuAnime>
 }
